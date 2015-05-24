@@ -48,8 +48,7 @@ abstract class Service {
 	if (isset($this->configuration['debug']) && $this->configuration['debug'] === true) {
 	    $output = get_class($this) . " - ";
 	    $output .= print_r($variable, true);
-	    echo $output;
-//	    file_put_contents("debug.log", $output, FILE_APPEND | LOCK_EX);
+	    file_put_contents("debug.log", $output, FILE_APPEND | LOCK_EX);
 	}
     }
 
