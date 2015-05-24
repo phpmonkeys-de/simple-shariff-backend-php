@@ -47,15 +47,16 @@ include './ServiceRegistry.php';
 
 $registry = new ServiceRegistry($config);
 
-$registry->registerService(new Twitter($requestUrl, $config));
 $registry->registerService(new Facebook($requestUrl, $config));
-$registry->registerService(new GooglePlus($requestUrl, $config));
-$registry->registerService(new Xing($requestUrl, $config));
 $registry->registerService(new Flattr($requestUrl, $config));
+$registry->registerService(new GooglePlus($requestUrl, $config));
 $registry->registerService(new LinkedIn($requestUrl, $config));
 $registry->registerService(new Pinterest($requestUrl, $config));
 $registry->registerService(new Reddit($requestUrl, $config));
 $registry->registerService(new StumbleUpon($requestUrl, $config));
+$registry->registerService(new Twitter($requestUrl, $config));
+$registry->registerService(new VKontakte($requestUrl, $config));
+$registry->registerService(new Xing($requestUrl, $config));
 
 echo json_encode($registry->createOutput());
 
