@@ -42,6 +42,9 @@ class LinkedIn extends Service {
 	$serviceCall = 'https://www.linkedin.com/countserv/count/share?url='.urlencode($this->url).'&lang=de_DE&format=json';
 	$result = $this->getContent($serviceCall);
 	$json = json_decode($result, true);
+	
+	$this->log($json);
+	
 	if (isset($json['count'])) {
 	    $this->count = $json['count'];
 	}

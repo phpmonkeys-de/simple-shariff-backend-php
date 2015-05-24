@@ -23,7 +23,6 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-
 require_once '../src/Service.php';
 require_once '../src/ServiceRegistry.php';
 require_once '../src/services/LinkedIn.php';
@@ -34,7 +33,8 @@ class LinkedInTest extends PHPUnit_Framework_TestCase {
 	$config = array(
 	    "services" => array(
 		"linkedin" => true
-	    )
+	    ),
+	    "debug" => true
 	);
 	$registry = new ServiceRegistry($config);
 	$registry->registerService(new LinkedIn("http://www.google.de", $config));
@@ -43,4 +43,5 @@ class LinkedInTest extends PHPUnit_Framework_TestCase {
 	$this->assertArrayHasKey('linkedin', $res);
 	$this->assertTrue($res['linkedin'] > 0);
     }
+
 }

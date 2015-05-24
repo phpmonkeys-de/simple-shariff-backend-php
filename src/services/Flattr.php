@@ -42,6 +42,8 @@ class Flattr extends Service {
 	$serviceCall = 'https://api.flattr.com/rest/v2/things/lookup/?url=' . urlencode($this->url);
 	$result = $this->getContent($serviceCall);
 	$json = json_decode($result, true);
+	
+	$this->log($json);
 
 	if (isset($json['flattrs'])) {
 	    $this->count = $json['flattrs'];

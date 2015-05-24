@@ -23,11 +23,10 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-
 abstract class Service {
-    
+
     protected $configuration = array();
-    
+
     public function __construct($config) {
 	$this->configuration = $config;
     }
@@ -41,11 +40,19 @@ abstract class Service {
 	curl_close($ch);
 	return $data;
     }
-    
-    public abstract function getName();
-    
-    public abstract function fetchCount();
-    
-    public abstract function getCount();
 
+    protected function log($variable) {
+	if (isset($this->configuration['debug']) && $this->configuration['debug'] === true) {
+	    $output = get_class($this) . " - ";
+	    $output .= print_r($variable, true);
+	    echo $output;
+//	    file_put_contents("debug.log", $output, FILE_APPEND | LOCK_EX);
+	}
+    }
+
+    public abstract function getName();
+
+    public abstract function fetchCount();
+
+    public abstract function getCount();
 }

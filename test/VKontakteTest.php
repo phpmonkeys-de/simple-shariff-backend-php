@@ -23,7 +23,6 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-
 require_once '../src/Service.php';
 require_once '../src/ServiceRegistry.php';
 require_once '../src/services/VKontakte.php';
@@ -34,7 +33,8 @@ class VKontakteTest extends PHPUnit_Framework_TestCase {
 	$config = array(
 	    "services" => array(
 		"vkontakte" => true
-	    )
+	    ),
+	    "debug" => true
 	);
 	$registry = new ServiceRegistry($config);
 	$registry->registerService(new VKontakte("http://www.google.com", $config));
@@ -43,4 +43,5 @@ class VKontakteTest extends PHPUnit_Framework_TestCase {
 	$this->assertArrayHasKey('vkontakte', $res);
 	$this->assertTrue($res['vkontakte'] > 0);
     }
+
 }

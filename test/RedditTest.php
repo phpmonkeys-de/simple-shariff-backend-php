@@ -23,7 +23,6 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-
 require_once '../src/Service.php';
 require_once '../src/ServiceRegistry.php';
 require_once '../src/services/Reddit.php';
@@ -34,7 +33,8 @@ class RedditTest extends PHPUnit_Framework_TestCase {
 	$config = array(
 	    "services" => array(
 		"reddit" => true
-	    )
+	    ),
+	    "debug" => true
 	);
 	$registry = new ServiceRegistry($config);
 	$registry->registerService(new Reddit("http://www.heise.de", $config));
@@ -43,4 +43,5 @@ class RedditTest extends PHPUnit_Framework_TestCase {
 	$this->assertArrayHasKey('reddit', $res);
 	$this->assertTrue($res['reddit'] > 0);
     }
+
 }

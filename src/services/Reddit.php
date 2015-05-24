@@ -41,7 +41,9 @@ class Reddit extends Service {
 	$serviceCall = 'https://www.reddit.com/api/info.json?url=' . urlencode($this->url);
 	$result = $this->getContent($serviceCall);
 	$json = json_decode($result, true);
-
+	
+	$this->log($json);
+	
 	$this->count = $this->calcCount($json);
     }
 

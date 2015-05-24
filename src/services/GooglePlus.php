@@ -49,6 +49,8 @@ class GooglePlus extends Service {
 	
 	$result = $this->getContent($serviceCall);
 	$json = json_decode($result, true);
+	
+	$this->log($json);
 
 	if (isset($json[0]) && isset($json[0]['result'])) {
 	    if (isset($json[0]['result']['metadata']['globalCounts']['count'])) {

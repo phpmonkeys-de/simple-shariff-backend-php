@@ -23,7 +23,6 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-
 require_once '../src/Service.php';
 require_once '../src/ServiceRegistry.php';
 require_once '../src/services/Pinterest.php';
@@ -34,14 +33,16 @@ class PinterestTest extends PHPUnit_Framework_TestCase {
 	$config = array(
 	    "services" => array(
 		"pinterest" => true
-	    )
+	    ),
+	    "debug" => true
 	);
 	$registry = new ServiceRegistry($config);
 	$registry->registerService(new Pinterest("http://www.google.com", $config));
 
 	$res = $registry->createOutput();
-	
+
 	$this->assertArrayHasKey('pinterest', $res);
 	$this->assertTrue($res['pinterest'] > 0);
     }
+
 }

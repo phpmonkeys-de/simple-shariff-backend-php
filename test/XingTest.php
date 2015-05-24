@@ -23,7 +23,6 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-
 require_once '../src/Service.php';
 require_once '../src/ServiceRegistry.php';
 require_once '../src/services/Xing.php';
@@ -34,7 +33,8 @@ class XingTest extends PHPUnit_Framework_TestCase {
 	$config = array(
 	    "services" => array(
 		"xing" => true
-	    )
+	    ),
+	    "debug" => true
 	);
 	$registry = new ServiceRegistry($config);
 	$registry->registerService(new Xing("http://www.google.com", $config));
@@ -43,4 +43,5 @@ class XingTest extends PHPUnit_Framework_TestCase {
 	$this->assertArrayHasKey('xing', $res);
 	$this->assertTrue($res['xing'] > 0);
     }
+
 }

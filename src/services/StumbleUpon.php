@@ -42,6 +42,9 @@ class StumbleUpon extends Service {
 	$serviceCall = 'https://www.stumbleupon.com/services/1.01/badge.getinfo?url='.urlencode($this->url);
 	$result = $this->getContent($serviceCall);
 	$json = json_decode($result, true);
+	
+	$this->log($json);
+	
 	if (isset($json['result']['views'])) {
 	    $this->count = $json['result']['views']+0;
 	}

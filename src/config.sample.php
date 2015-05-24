@@ -44,6 +44,7 @@ $config = array(
     ),
     "facebookAppId" => "", // optional
     "facebookAppSecret" => "", // optional
-    "googlePlusApiKey" => "" // optional
+    "googlePlusApiKey" => "", // optional
+    "debug" => false
 );
 

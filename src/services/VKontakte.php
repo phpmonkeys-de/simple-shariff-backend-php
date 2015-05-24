@@ -41,6 +41,7 @@ class VKontakte extends Service {
     public function fetchCount() {
 	$serviceCall = 'https://vk.com/share.php?act=count&index=1&url=' . urlencode($this->url);
 	$result = $this->getContent($serviceCall);
+	$this->log($result);
 	$result = str_replace("VK.Share.count(1,","",$result);
 	$result = str_replace(");","", $result);
 	$this->count = $result + 0;

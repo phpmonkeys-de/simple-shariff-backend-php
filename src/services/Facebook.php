@@ -49,6 +49,8 @@ class Facebook extends Service {
 
 	$result = $this->getContent($query);
 	$json = json_decode($result, true);
+	
+	$this->log($json);
 
 	// engagement is the preferred field
 	if (isset($json['og_object']['engagement']['count'])) {

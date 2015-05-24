@@ -36,6 +36,7 @@ class FacebookTest extends PHPUnit_Framework_TestCase {
 	    ),
 	    "facebookAppId" => "", // optional
 	    "facebookAppSecret" => "", // optional
+	    "debug" => true
 	);
 	$registry = new ServiceRegistry($config);
 	$registry->registerService(new Facebook("http://www.google.de", $config));

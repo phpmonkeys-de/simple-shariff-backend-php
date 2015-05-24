@@ -1,6 +1,5 @@
 <?php
 
-
 /**
  * The MIT License (MIT)
  *
@@ -24,7 +23,6 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-
 require_once '../src/Service.php';
 require_once '../src/ServiceRegistry.php';
 require_once '../src/services/GooglePlus.php';
@@ -37,7 +35,8 @@ class GooglePlusTest extends PHPUnit_Framework_TestCase {
 	    "services" => array(
 		"googleplus" => true
 	    ),
-	    "googlePlusApiKey" => "" // optional
+	    "googlePlusApiKey" => "", // optional
+	    "debug" => true
 	);
 	$registry = new ServiceRegistry($config);
 	$registry->registerService(new GooglePlus($url, $config));
@@ -46,4 +45,5 @@ class GooglePlusTest extends PHPUnit_Framework_TestCase {
 	$this->assertArrayHasKey('googleplus', $res);
 	$this->assertTrue($res['googleplus'] > 0);
     }
+
 }

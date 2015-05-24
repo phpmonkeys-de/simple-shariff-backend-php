@@ -42,6 +42,9 @@ class Twitter extends Service {
 	$serviceCall = 'https://cdn.api.twitter.com/1/urls/count.json?url=' . urlencode($this->url);
 	$result = $this->getContent($serviceCall);
 	$json = json_decode($result, true);
+	
+	$this->log($json);
+	
 	$this->count = $json['count'];
     }
 

@@ -42,6 +42,8 @@ class Xing extends Service {
 	$serviceCall = 'https://www.xing-share.com/spi/shares/statistics';
 	$result = $this->getContent($serviceCall);
 	$json = json_decode($result, true);
+	
+	$this->log($json);
 
 	if (isset($json['share_counter'])) {
 	    $this->count = $json['share_counter'] + 0;

@@ -23,7 +23,6 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-
 require_once '../src/Service.php';
 require_once '../src/ServiceRegistry.php';
 require_once '../src/services/Twitter.php';
@@ -34,7 +33,8 @@ class TwitterTest extends PHPUnit_Framework_TestCase {
 	$config = array(
 	    "services" => array(
 		"twitter" => true
-	    )
+	    ),
+	    "debug" => true
 	);
 	$registry = new ServiceRegistry($config);
 	$registry->registerService(new Twitter("http://www.heise.de", $config));
@@ -43,4 +43,5 @@ class TwitterTest extends PHPUnit_Framework_TestCase {
 	$this->assertArrayHasKey('twitter', $res);
 	$this->assertTrue($res['twitter'] > 0);
     }
+
 }

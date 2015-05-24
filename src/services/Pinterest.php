@@ -42,6 +42,8 @@ class Pinterest extends Service {
 	$serviceCall = 'http://api.pinterest.com/v1/urls/count.json?callback=x&url='.urlencode($this->url);
 	$result = $this->getContent($serviceCall);
 	
+	$this->log($result);
+	
 	$result = str_replace( 'x(', '', $result );
 	$result = substr( $result, 0, strlen( $result ) - 1 );
 	

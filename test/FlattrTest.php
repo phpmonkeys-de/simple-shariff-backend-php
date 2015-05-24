@@ -23,7 +23,6 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-
 require_once '../src/Service.php';
 require_once '../src/ServiceRegistry.php';
 require_once '../src/services/Flattr.php';
@@ -34,14 +33,16 @@ class FlattrTest extends PHPUnit_Framework_TestCase {
 	$config = array(
 	    "services" => array(
 		"flattr" => true
-	    )
+	    ),
+	    "debug" => true
 	);
 	$registry = new ServiceRegistry($config);
 	$registry->registerService(new Flattr("http://www.bitsundso.de/bus389/569/", $config));
 
 	$res = $registry->createOutput();
-	
+
 	$this->assertArrayHasKey('flattr', $res);
 	$this->assertTrue($res['flattr'] > 0);
     }
+
 }
