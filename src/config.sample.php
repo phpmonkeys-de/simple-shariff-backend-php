@@ -24,7 +24,7 @@
  */
 
 $config = array(
-    "cacheTimeInSeconds" => 600,
+    "cacheTimeInSeconds" => 3600,
     "cacheEnabled" => true, 
     // hostFilter is used to pin the service to urls on a special server 
     // for example www.heise.de (!no protocol) so only heise urls are allowed
