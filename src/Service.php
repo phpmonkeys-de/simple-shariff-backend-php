@@ -37,6 +37,9 @@ abstract class Service {
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 	curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, $timeout);
 	$data = curl_exec($ch);
+	if ($data === false) {
+	    $this->log(curl_error($ch));
+	}
 	curl_close($ch);
 	return $data;
     }
