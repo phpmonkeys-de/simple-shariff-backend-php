@@ -74,7 +74,7 @@ class Facebook extends Service {
 	$appId = $this->configuration['facebookAppId'];
 	$appSecret = $this->configuration['facebookAppSecret'];
 
-	if (isset($appId) && isset($appSecret)) {
+	if (!empty($appId) && !empty($appSecret)) {
 	    try {
 		$url = 'https://graph.facebook.com/oauth/access_token?client_id=' . $appId
 			. '&client_secret=' . $appSecret . '&grant_type=client_credentials';

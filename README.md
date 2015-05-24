@@ -4,6 +4,8 @@ A simple backend for [https://github.com/heiseonline/shariff](https://github.com
 
 This library is compatible to PHP 5.3+
 
+[![Build Status](https://travis-ci.org/phpmonkeys-de/simple-shariff-backend-php.svg?branch=master)](https://travis-ci.org/phpmonkeys-de/simple-shariff-backend-php)
+
 ## Who should use this
 There's already a shariff backend implementation in PHP, but this is different because it don't depends on PHP 5.4. Some older server systems (for example Ubuntu 10.04 LTS) come with PHP 5.3 and the original backend is not working on these machines. So you can only upgrade your server (have fun :smiley:) or use an alternative implementation like this one.
 

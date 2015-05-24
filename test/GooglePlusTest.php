@@ -36,7 +36,8 @@ class GooglePlusTest extends PHPUnit_Framework_TestCase {
 	$config = array(
 	    "services" => array(
 		"googleplus" => true
-	    )
+	    ),
+	    "googlePlusApiKey" => "" // optional
 	);
 	$registry = new ServiceRegistry($config);
 	$registry->registerService(new GooglePlus($url, $config));

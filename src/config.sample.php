@@ -42,8 +42,8 @@ $config = array(
 	"vkontakte" => true,
 	"xing" => true
     ),
-    "facebookAppId" => NULL, // optional
-    "facebookAppSecret" => NULL, // optional
-    "googlePlusApiKey" => NULL // optional
+    "facebookAppId" => "", // optional
+    "facebookAppSecret" => "", // optional
+    "googlePlusApiKey" => "" // optional
 );
 

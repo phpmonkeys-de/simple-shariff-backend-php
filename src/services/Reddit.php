@@ -23,7 +23,6 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-
 class Reddit extends Service {
 
     private $url;
@@ -39,23 +38,25 @@ class Reddit extends Service {
     }
 
     public function fetchCount() {
-	$serviceCall = 'https://www.reddit.com/api/info.json?url='.urlencode($this->url);
+	$serviceCall = 'https://www.reddit.com/api/info.json?url=' . urlencode($this->url);
 	$result = $this->getContent($serviceCall);
 	$json = json_decode($result, true);
-	
+
 	$this->count = $this->calcCount($json);
     }
 
     public function getCount() {
 	return $this->count;
     }
-    
+
     protected function calcCount($json) {
-        $count = 0;
-        foreach ($json['data']['children'] as $child) {
-            $count += $child['data']['score'];
-        }
-        return $count;
+	$count = 0;
+	if (isset($json['data']) && isset($json['data']['children'])) {
+	    foreach ($json['data']['children'] as $child) {
+		$count += $child['data']['score'];
+	    }
+	}
+	return $count;
     }
 
 }

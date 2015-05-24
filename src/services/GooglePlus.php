@@ -43,7 +43,7 @@ class GooglePlus extends Service {
 	
 	$serviceCall = 'https://clients6.google.com/rpc'; //?key=' . $this->apiKey;
 	
-	if (isset($gplusApiKey)) {
+	if (!empty($gplusApiKey)) {
 	    $serviceCall .= "?key=" . $gplusApiKey;
 	}
 	

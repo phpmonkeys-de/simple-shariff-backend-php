@@ -5,6 +5,8 @@ Ein simples PHP Backend für
 
 Diese Bibliothek ist kompatibel bis PHP 5.3, vielleicht auch zu älteren Versionen. 
 
+[![Build Status](https://travis-ci.org/phpmonkeys-de/simple-shariff-backend-php.svg?branch=master)](https://travis-ci.org/phpmonkeys-de/simple-shariff-backend-php)
+
 ## Wer sollte diese Bibliothek nutzen
 Diese Implementierung unterscheidet sich zu der bestehenden Shariff PHP Backend Implementierung dadurch, dass sie nicht PHP 5.4 voraussetzt. Es gibt ältere Server Systeme (bspw Ubuntu 10.04 LTS), die auf PHP 5.3 fest sitzen und auf diesen funktioniert die Originalbibliothek leider nicht. Wenn man nicht seinen Server upgraden möchte/kann muss man eine alternative Implementierung wie die vorliegende nutzen.
 
