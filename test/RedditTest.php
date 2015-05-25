@@ -41,7 +41,7 @@ class RedditTest extends PHPUnit_Framework_TestCase {
 
 	$res = $registry->createOutput();
 	$this->assertArrayHasKey('reddit', $res);
-	$this->assertTrue($res['reddit'] > 0);
+	$this->assertTrue(is_int($res['reddit']));
     }
 
 }

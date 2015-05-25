@@ -43,7 +43,7 @@ class GooglePlusTest extends PHPUnit_Framework_TestCase {
 
 	$res = $registry->createOutput();
 	$this->assertArrayHasKey('googleplus', $res);
-	$this->assertTrue($res['googleplus'] > 0);
+	$this->assertTrue(is_int($res['googleplus']));
     }
 
 }

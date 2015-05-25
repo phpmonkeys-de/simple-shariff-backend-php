@@ -43,7 +43,7 @@ class FacebookTest extends PHPUnit_Framework_TestCase {
 
 	$res = $registry->createOutput();
 	$this->assertArrayHasKey('facebook', $res);
-	$this->assertTrue($res['facebook'] > 0);
+	$this->assertTrue(is_int($res['facebook']));
     }
 
 }

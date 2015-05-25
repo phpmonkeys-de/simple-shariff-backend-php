@@ -42,7 +42,7 @@ class PinterestTest extends PHPUnit_Framework_TestCase {
 	$res = $registry->createOutput();
 
 	$this->assertArrayHasKey('pinterest', $res);
-	$this->assertTrue($res['pinterest'] > 0);
+	$this->assertTrue(is_int($res['pinterest']));
     }
 
 }

@@ -41,7 +41,7 @@ class VKontakteTest extends PHPUnit_Framework_TestCase {
 
 	$res = $registry->createOutput();
 	$this->assertArrayHasKey('vkontakte', $res);
-	$this->assertTrue($res['vkontakte'] > 0);
+	$this->assertTrue(is_int($res['vkontakte']));
     }
 
 }

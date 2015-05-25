@@ -41,7 +41,7 @@ class LinkedInTest extends PHPUnit_Framework_TestCase {
 
 	$res = $registry->createOutput();
 	$this->assertArrayHasKey('linkedin', $res);
-	$this->assertTrue($res['linkedin'] > 0);
+	$this->assertTrue(is_int($res['linkedin']));
     }
 
 }

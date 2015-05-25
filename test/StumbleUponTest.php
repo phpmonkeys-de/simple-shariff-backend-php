@@ -41,7 +41,7 @@ class StumbleUponTest extends PHPUnit_Framework_TestCase {
 
 	$res = $registry->createOutput();
 	$this->assertArrayHasKey('stumbleupon', $res);
-	$this->assertTrue($res['stumbleupon'] > 0);
+	$this->assertTrue(is_int($res['stumbleupon']));
     }
 
 }

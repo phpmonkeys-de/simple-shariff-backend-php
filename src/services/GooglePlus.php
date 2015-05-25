@@ -54,7 +54,7 @@ class GooglePlus extends Service {
 
 	if (isset($json[0]) && isset($json[0]['result'])) {
 	    if (isset($json[0]['result']['metadata']['globalCounts']['count'])) {
-		$this->count = $json[0]['result']['metadata']['globalCounts']['count'];
+		$this->count = intval($json[0]['result']['metadata']['globalCounts']['count']);
 	    }
 	}
     }

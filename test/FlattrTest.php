@@ -42,7 +42,7 @@ class FlattrTest extends PHPUnit_Framework_TestCase {
 	$res = $registry->createOutput();
 
 	$this->assertArrayHasKey('flattr', $res);
-	$this->assertTrue($res['flattr'] > 0);
+	$this->assertTrue(is_int($res['flattr']));
     }
 
 }

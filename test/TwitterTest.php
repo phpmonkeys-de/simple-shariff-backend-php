@@ -41,7 +41,7 @@ class TwitterTest extends PHPUnit_Framework_TestCase {
 
 	$res = $registry->createOutput();
 	$this->assertArrayHasKey('twitter', $res);
-	$this->assertTrue($res['twitter'] > 0);
+	$this->assertTrue(is_int($res['twitter']));
     }
 
 }

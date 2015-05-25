@@ -41,7 +41,7 @@ class XingTest extends PHPUnit_Framework_TestCase {
 
 	$res = $registry->createOutput();
 	$this->assertArrayHasKey('xing', $res);
-	$this->assertTrue($res['xing'] > 0);
+	$this->assertTrue(is_int($res['xing']));
     }
 
 }
