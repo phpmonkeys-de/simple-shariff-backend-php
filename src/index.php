@@ -26,7 +26,12 @@
 
 include "./config.php";
 
-$requestUrl = $_GET['url'];
+$requestUrl = filter_input(INPUT_GET, "url", FILTER_VALIDATE_URL);
+
+if ($requestUrl === false) {
+    echo json_encode(null);
+    exit();
+}
 
 include './top-cache.php';
 
