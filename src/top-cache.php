@@ -23,8 +23,16 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-
 header('Content-type: application/json');
+
+/** add caching header * */
+if ($config['cacheHeaderEnabled']) {
+    header("Expires: Sat, 24 Jan 1970 04:10:00 GMT"); // date from the past 
+    header("Last-Modified: " . gmdate("D, d M Y H:i:s") . " GMT"); // always changed 
+    header("Cache-Control: no-store, no-cache, must-revalidate");
+    header("Cache-Control: post-check=0, pre-check=0", false); // just for MSIE 5 
+    header("Pragma: no-cache");
+}
 
 if (empty($requestUrl) || $requestUrl === false) {
     echo json_encode(null);
