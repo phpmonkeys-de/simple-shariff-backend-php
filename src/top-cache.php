@@ -26,7 +26,7 @@
 
 header('Content-type: application/json');
 
-if (empty($requestUrl)) {
+if (empty($requestUrl) || $requestUrl === false) {
     echo json_encode(null);
     exit();
 }

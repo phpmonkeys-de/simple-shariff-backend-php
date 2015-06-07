@@ -28,11 +28,6 @@ include "./config.php";
 
 $requestUrl = filter_input(INPUT_GET, "url", FILTER_VALIDATE_URL);
 
-if ($requestUrl === false) {
-    echo json_encode(null);
-    exit();
-}
-
 include './top-cache.php';
 
 if (!empty($config['hostFilter'])) {
